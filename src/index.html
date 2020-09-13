@@ -1,0 +1,56 @@
+<script src="https://tonejs.github.io/build/Tone.js"></script>
+
+<script>
+  var drums_orig = new Tone.Player("drums_path");
+  var bass_orig = new Tone.Player("bass_path");
+  var vocal_orig = new Tone.Player("vocal_path");
+  var other_orig = new Tone.Player("other_path");
+
+  var drums_mod = new Tone.Player("drums_path");
+  var bass_mod = new Tone.Player("bass_path");
+  var vocal_mod = new Tone.Player("vocal_path");
+  var other_mod = new Tone.Player("other_path");
+
+  var sea_channel = new Tone.Channel().toDestination();
+
+  const crossFade_drums = new Tone.CrossFade().chain(sea_channel);
+  const crossFade_bass = new Tone.CrossFade().chain(sea_channel);
+  const crossFade_vocals = new Tone.CrossFade().chain(sea_channel);
+  const crossFade_other = new Tone.CrossFade().chain(sea_channel);
+
+  drums_orig.loop = true;
+  bass_orig.loop = true;
+  vocal_orig.loop = true;
+  other_orig.loop = true;
+
+  drums_mod.loop = true;
+  bass_mod.loop = true;
+  vocal_mod.loop = true;
+  other_mod.loop = true;
+
+  drums_orig.chain(crossFade_drums.a);
+  bass_orig.chain(crossFade_bass.a);
+  vocal_orig.chain(crossFade_vocals.a);
+  other_orig.chain(crossFade_other.a);
+
+  drums_mod.chain(crossFade_drums.b);
+  bass_mod.chain(crossFade_bass.b);
+  vocal_mod.chain(crossFade_vocals.b);
+  other_mod.chain(crossFade_other.b);
+
+  crossFade_drums.fade.value = 0.5;
+  crossFade_bass.fade.value = 0.5;
+  crossFade_vocals.fade.value = 0.5;
+  crossFade_other.fade.value = 0.5;
+
+  drums_orig.start();
+  bass_orig.start();
+  vocal_orig.start();
+  other_orig.start();
+  drums_mod.start();
+  bass_mod.start();
+  vocal_mod.start();
+  other_mod.start();
+
+  sea_channel.mute = False;
+</script>
