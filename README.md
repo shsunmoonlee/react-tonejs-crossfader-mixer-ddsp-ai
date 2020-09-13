@@ -6,6 +6,7 @@
 
 ## Summary
 
+[ars electronica 2020 AIxMusic20](https://ars.electronica.art/keplersgardens/en/)
 AIxMusic20 Hackathon Presentation Group3A - 13.09.2020
 Turning everdays environmental sounds into before unheard soundscapes.
 Changing the perception of our environment by breaking its patterns and transforming them into a new hearing experience by using AI technology.
@@ -19,6 +20,16 @@ Unmix the field recordings & create 4 separate stems for each
 Using DDSP Timbre Transfer\* (pre-trained and own trained models)
 
 “Recreating” the environment by using Mixer & Crossfader
+
+## Creators
+
+Laura Ibanez
+António Ramires
+Seunghun Lee
+Satvik Venkatesh
+Anja Scheller
+Ying Wang
+CJ
 
 ### References
 
